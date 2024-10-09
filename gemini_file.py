@@ -105,6 +105,6 @@ def get_prompt(image,user_pref,lightening = False):
   print(response.text)
   return response.text
 
-user_pref = """attached is a given product , its for hollowine offer of cleaning"""
-image = "back.jpg"
-get_prompt(image,user_pref,lightening=True)
+# user_pref = """attached is a given product , its for hollowine offer of cleaning"""
+# image = "back.jpg"
+# get_prompt(image,user_pref,lightening=True)

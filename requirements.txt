@@ -1,0 +1,4 @@
+wordllama
+python-dotenv
+google-generativeai
+Pillow
