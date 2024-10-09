@@ -46,3 +46,29 @@ def embed_image_within_bbox(base_image_path, embedding_image_path, bbox):
 # Example usage
 # bbox = (100, 50, 200, 350)  # Example bounding box coordinates
 # embed_image_within_bbox('back.jpg', 'product.jpg', bbox)
+
+
+import cv2
+
+def crop_image_with_bbox(image_path, bbox, output_path):
+    # Load the image
+    image = cv2.imread(image_path)
+    if image is None:
+        print(f"Error: Unable to load image at {image_path}. Check the file path.")
+        return
+    
+    # Bounding box coordinates (x, y, width, height)
+    x, y, bbox_width, bbox_height = bbox
+
+    # Crop the image using the bounding box coordinates
+    cropped_image = image[y:y+bbox_height, x:x+bbox_width]
+
+    # Save or display the cropped image
+    cv2.imwrite(output_path, cropped_image)
+    print(f"Cropped image saved as {output_path}.")
+
+
+# bbox = (100, 50, 200, 150)  # (x, y, width, height)
+# crop_image_with_bbox('base_image.jpg', 
+#                      bbox, 
+#                      'cropped_output.jpg')
